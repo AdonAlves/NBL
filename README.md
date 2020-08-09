@@ -31,3 +31,5 @@ Defense:
 
 01/08/2020 - decided it would be a good idea to work on a per minute basis, rather than per game as the NBA and NBL run for different lengths and would be a superior method of comparison. This invollves changing the data scraper to select the the per minute basis on Real GM.  The code to scrape the data will be updated shortly 
  - further adjustments to the model will have to be made to account for the differences in the NBL vs NBA. 
+08/08/2020 - during the week I created an alternative model, which will be uploaded soon. While browising youtube today I came across Ofer Habushi, with his data project into the NBA. I decided to have a look and take some components on board. Such components include recursive feature elimination. 
+ 
