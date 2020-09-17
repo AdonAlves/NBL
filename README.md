@@ -1,20 +1,34 @@
-# NBL Data Science Project
-This project is designed to develop my own skills within sport analytics. The specific skills I am looking to develop in coding are improved efficiency with python and libraries such as Pandas and matplotlib.
+# NBL Win Percentage Estimator: Project Overview
+- This project is designed to develop my own skills within sport analytics. The specific skills I am looking to develop in coding are improved efficiency with python and libraries such as Pandas and matplotlib, seaborn, and Sci Kit learn. 
+- Scraped All data from the RealGM BasketBall webstie for the NBL. Unfortunatlely it only contained data from 2012- 2020 seasons. 
+- Utilised Exhaustive Feature selection, lineear regression, and normalization of data from the Sci Kit learn Library 
+- The features the Exhaustive Feature Selection suggested were effective Field Goal% for both teams, opponent Personal Fouls, Team Offensive and Defensive Rebound %,  both the Team and opponents  Turnover Percentage, and the opponents number of personal fouls. 
+- This project has the potential to assist coaches and players in improving their win percentage, through the modification of play style.  It appears that having a significant number of personal fouls can increase the overall win% of the opposing team, it is currently hypothesised that due to the free-throw% being quite high over the two Free throws awarded on a foul that you are giving away ~1.5 points. 
+- eFG%,turnovers and rebounds are self explanatory as most coaches are already looking at this stats 
+## Code and Resources Used
+Python Version : 3.7 
 
-All other projects used to assist me on this journey will be refrenced in the README as well as in a word document formal report. 
+Packages: Pandas, numpy, sklearn, matplotlib, seaborn
+
+## Data Cleaning 
+Fortnunately for all the data collected there were no empty values, so all that was required was to merge all the different metrics into a single data frame for each year and then drop the team names, and merge all the years into a single dataframe. 
+
+## Exploratory Data Analysis 
+Seaborn and matplotlib were used to generate histograms to determine the distribution of data. Unfortunately due to the nature of the NBL having so few games and Teams within a season very little data was actually collected and there may still be significant changes in play style over recent years being impacted with the 3Point boom. 
+
+Initially I used seaborn to eliminated data from the original dataframe that did not have a normal distribution, as a result percentage based stats had normal distributions and then. I removed data that was either a combination of other data or a component based on the the linear relationship to the win/loss percentage. 
+
+!!!INSERT IMAGE HERE !!!
 
 
-## Ideas to be investigated during the project
-1.  Does the rate of growth in the NBA's 3 pointer boom match that in NBL in the years 2011-2019?
-2. Is there a relationship between 3-pointers and the placement at the end of the season?
+## Proposed linear model for predicting win% 
 
-## Procedure 
-1. Scrape NBL Data for the years 2011-2019 
-2. Scrape NBA Data for the years 2011-2019
-3. Use data to calculate the average number of three pointers made per game in the NBL vs NBA. 
-4. Discuss data
+- Win% = -0.41 + (2.4 * eFG%) - (2.62* OppeFG%) + (7.8+ORB%) + (0.87 * DRB%) - (4.25 * TOV%) + (4.31 * OppTOV%) - (1.82 * STL%) + (0.01 * AvgOppPF/ 100)
+Where all percentages are given as decimals. 
 
-## Information Gathered 
+
+
+## Prior Information Gathered 
 The Four Factor models for team offense and defense from the book Mathletics
 Offense: 
   1. EFG 
@@ -27,9 +41,4 @@ Defense:
   3. DRP 
   4. Opponents FTR
 
-## Notes 
 
-01/08/2020 - decided it would be a good idea to work on a per minute basis, rather than per game as the NBA and NBL run for different lengths and would be a superior method of comparison. This invollves changing the data scraper to select the the per minute basis on Real GM.  The code to scrape the data will be updated shortly 
- - further adjustments to the model will have to be made to account for the differences in the NBL vs NBA. 
-08/08/2020 - during the week I created an alternative model, which will be uploaded soon. While browising youtube today I came across Ofer Habushi, with his data project into the NBA. I decided to have a look and take some components on board. Such components include recursive feature elimination. 
- 
