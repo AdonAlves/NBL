@@ -8,7 +8,7 @@
 ## Code and Resources Used
 Python Version : 3.7 
 
-Packages: Pandas, numpy, sklearn, matplotlib, seaborn
+Packages: Pandas, numpy, sklearn, matplotlib, seaborn, mlxtend
 
 ## Data Cleaning 
 Fortnunately for all the data collected there were no empty values, so all that was required was to merge all the different metrics into a single data frame for each year and then drop the team names, and merge all the years into a single dataframe. 
@@ -18,7 +18,9 @@ Seaborn and matplotlib were used to generate histograms to determine the distrib
 
 Initially I used seaborn to eliminated data from the original dataframe that did not have a normal distribution, as a result percentage based stats had normal distributions and then. I removed data that was either a combination of other data or a component based on the the linear relationship to the win/loss percentage. 
 
-!!!INSERT IMAGE HERE !!!
+![](NBL/blob/master/Figure%202020-09-14%20130300.png)
+
+Once complete, it was run through the exhaustive feature selection in a linear regression model which selected the following 8 Variables  eFG%, OppeFG%, ORB%, DRB%, TOV%, OppTOV%, STL% and AverageOppPF. 
 
 
 ## Proposed linear model for predicting win% 
@@ -42,3 +44,7 @@ Defense:
   4. Opponents FTR
 
 
+## References 
+inspiration for the model was provided by Ken Jee his youtube link is https://www.youtube.com/c/KenJee1/videos
+Computerphiles youtube chanel was used to help improve my understanding of data science https://www.youtube.com/user/Computerphile
+Pandas, matplotlib, seaborn, sklearn, mlxtend UserGuides were used to understand the tools used within the project 
