@@ -23,7 +23,7 @@ Initially I used seaborn to eliminated data from the original dataframe that did
 
 ## Proposed linear model for predicting win% 
 
-- Win% = -0.41 + (2.4 * eFG%) - (2.62* OppeFG%) + (7.8+ORB%) + (0.87 * DRB%) - (4.25 * TOV%) + (4.31 * OppTOV%) - (1.82 * STL%) + (0.01 * AvgOppPF/ 100)
+- Win% = -0.41 + (2.4 * eFG%) - (2.62* OppeFG%) + (7.8+ORB%) + (0.87 * DRB%) - (4.25 * TOV%) + (4.31 * OppTOV%) - (1.82 * STL%) + (0.0001 * AvgOppPF)
 Where all percentages are given as decimals. 
 
 
