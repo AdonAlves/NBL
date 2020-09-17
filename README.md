@@ -18,19 +18,25 @@ Seaborn and matplotlib were used to generate histograms to determine the distrib
 
 Initially I used seaborn to eliminated data from the original dataframe that did not have a normal distribution, as a result percentage based stats had normal distributions and then. I removed data that was either a combination of other data or a component based on the the linear relationship to the win/loss percentage. 
 
-![](NBL/blob/master/Figure%202020-09-14%20130300.png)
+For the figure showing the histograms please see Figure 2020-09-14 130300 in the repository as it is too large to display in the readme. 
 
 Once complete, it was run through the exhaustive feature selection in a linear regression model which selected the following 8 Variables  eFG%, OppeFG%, ORB%, DRB%, TOV%, OppTOV%, STL% and AverageOppPF. 
 
 
 ## Proposed linear model for predicting win% 
-
-- Win% = -0.41 + (2.4 * eFG%) - (2.62* OppeFG%) + (7.8+ORB%) + (0.87 * DRB%) - (4.25 * TOV%) + (4.31 * OppTOV%) - (1.82 * STL%) + (0.0001 * AvgOppPF)
 Where all percentages are given as decimals. 
 
+Win% = -0.41 + (2.4 * eFG%) - (2.62* OppeFG%) + (7.8+ORB%) + (0.87 * DRB%) - (4.25 * TOV%) + (4.31 * OppTOV%) - (1.82 * STL%) + (0.0001 * AvgOppPF)
 
 
-## Prior Information Gathered 
+## References 
+inspiration for the model was provided by Ken Jee his youtube link is https://www.youtube.com/c/KenJee1/videos
+Mathletics: How Gamblers, Managers, and Sports Enthusiasts Use Mathematics in Baseball, Basketball, and Football
+Book by Wayne L. Winston
+Computerphiles youtube chanel was used to help improve my understanding of data science https://www.youtube.com/user/Computerphile
+Pandas, matplotlib, seaborn, sklearn, mlxtend UserGuides were used to understand the tools used within the project
+
+## Prior Information Gathered from mathletics  
 The Four Factor models for team offense and defense from the book Mathletics
 Offense: 
   1. EFG 
@@ -43,8 +49,3 @@ Defense:
   3. DRP 
   4. Opponents FTR
 
-
-## References 
-inspiration for the model was provided by Ken Jee his youtube link is https://www.youtube.com/c/KenJee1/videos
-Computerphiles youtube chanel was used to help improve my understanding of data science https://www.youtube.com/user/Computerphile
-Pandas, matplotlib, seaborn, sklearn, mlxtend UserGuides were used to understand the tools used within the project 
